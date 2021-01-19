@@ -13,7 +13,7 @@ export class AuthService {
   // http://localhost:8080/ before every route in every service if this is true
 
   constructor(private http: Http) {
-      this.isDev = true;  // Change to false before deployment
+      this.isDev = false;  // Change to false before deployment
       }
 
   registerUser(user) {
@@ -26,7 +26,7 @@ export class AuthService {
   authenticateUser(user) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:8080/users/authenticate', user, {headers: headers})
+    return this.http.post('users/authenticate', user, {headers: headers})
       .map(res => res.json());
   }
 
