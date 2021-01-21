@@ -1,0 +1,6 @@
+<button type="button" (click)="toggleTimer()" class="btn btn-primary btn-lg">
+  {{ (timerService.isRunning() | async) ? "Pause" : "Play" }}
+</button>
+<button type="button" (click)="restartTimer()" class="btn btn-primary btn-lg">
+  Restart
+</button>

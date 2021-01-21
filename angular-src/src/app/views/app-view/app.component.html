@@ -1,0 +1,15 @@
+<div class="container">
+  <section class="section-master">
+    <a *ngIf="showTimer()"
+        routerLink="/about"
+        routerLinkActive="active"
+        class="help-icon about">About</a>
+    <a *ngIf="!showTimer()"
+        routerLink="/timer"
+        routerLinkActive="active"
+        class="help-icon timer">Timer</a>
+    <router-outlet></router-outlet>
+  </section>
+
+  <app-sidebar></app-sidebar>
+</div>

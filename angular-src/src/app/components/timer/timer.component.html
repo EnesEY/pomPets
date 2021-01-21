@@ -1,0 +1,16 @@
+<div>
+  <h1>
+    <time>{{ timerService.getCurrentTime() | async }}</time>
+  </h1>
+
+  <div class="progress">
+    <div
+      class="progress-bar"
+      role="progressbar"
+      [ngStyle]="{width: (timerService.getCurrentTimePercentage() | async) + '%'}"  
+      aria-valuenow="timerService.getCurrentTimePercentage() | async"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    ></div>
+  </div>
+</div>
