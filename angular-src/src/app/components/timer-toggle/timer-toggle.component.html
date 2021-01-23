@@ -1,11 +1,13 @@
-<div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label class="btn btn-primary active"  (click)="setTimer(settingsService.timerTypes[0])" >
-    <input type="radio" name="options" id="option1" autocomplete="off" checked=""> Pomodoro
-  </label>
-  <label class="btn btn-primary" (click)="setTimer(settingsService.timerTypes[1])">
-    <input type="radio" name="options" id="option2" autocomplete="off"> Short Break
-  </label>
-  <label class="btn btn-primary" (click)="setTimer(settingsService.timerTypes[2])">
-    <input type="radio" name="options" id="option3" autocomplete="off"> Long Break
-  </label>
+<div>
+  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-primary active"  (click)="setTimer(settingsService.timerTypes[0])" >
+      <input type="radio" name="options" id="option1" autocomplete="off" checked=""> Pomodoro
+    </label>
+    <label class="btn btn-primary" (click)="setTimer(settingsService.timerTypes[1])">
+      <input type="radio" name="options" id="option2" autocomplete="off"> Short Break
+    </label>
+    <label class="btn btn-primary" (click)="setTimer(settingsService.timerTypes[2])">
+      <input type="radio" name="options" id="option3" autocomplete="off"> Long Break
+    </label>
+  </div>
 </div>
