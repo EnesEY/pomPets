@@ -1,13 +1,14 @@
-<div>
-  <h1 class="display-3">
+<div class="d-flex flex-column">
+  <h1 class="display-1 d-flex justify-content-center">
     <time>{{ timerService.getCurrentTime() | async }}</time>
   </h1>
-
   <div class="progress">
     <div
       class="progress-bar"
       role="progressbar"
-      [ngStyle]="{width: (timerService.getCurrentTimePercentage() | async) + '%'}"  
+      [ngStyle]="{
+        width: (timerService.getCurrentTimePercentage() | async) + '%'
+      }"
       aria-valuenow="timerService.getCurrentTimePercentage() | async"
       aria-valuemin="0"
       aria-valuemax="100"
