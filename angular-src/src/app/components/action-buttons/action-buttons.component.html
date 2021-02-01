@@ -1,0 +1,10 @@
+<div class="card bg-primary mb-3 border-dark">
+  <div class="d-flex justify-content-center card-body">
+    <button type="button" (click)="toggleTimer()" class="btn btn-primary btn-lg m-3">
+      {{ (timerService.isRunning() | async) ? "Pause" : "Play" }}
+    </button>
+    <button type="button" (click)="restartTimer()" class="btn btn-primary btn-lg m-3">
+      Restart
+    </button>
+  </div>
+</div>

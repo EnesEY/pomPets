@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -16,14 +16,23 @@ import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { AuthGuard } from './guards/auth.guard';
-
-const appRoutes: Routes =  [
-  {path:'', component: HomeComponent},
-  {path:'register', component: RegisterComponent},
-  {path:'login', component: LoginComponent},
-  {path:'dashboard', component: DashboardComponent, canActivate:[AuthGuard]},
-  {path:'profile', component: ProfileComponent, canActivate:[AuthGuard]}
-]
+import { TimerComponent } from './components/timer/timer.component';
+import { AppRoutesModule } from './app.routes';
+import { TimerViewComponent } from './views/timer-view/timer-view.component';
+import { AboutViewComponent } from './views/about-view/about-view.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { HistoryComponent } from './components/history/history.component';
+import { ActionButtonsComponent } from './components/action-buttons/action-buttons.component';
+import { TimerToggleComponent } from './components/timer-toggle/timer-toggle.component';
+import { DashToSpacePipe } from './pipes/dash-to-space/dash-to-space.pipe';
+import { CapitalizePipe } from './pipes/capitalize/capitalize.pipe';
+import { CamelizePipe } from './pipes/camelize/camelize.pipe';
+import { HistoryService } from './services/history.service';
+import { SettingsService } from './services/settings.service';
+import { StorageService } from './services/storage.service';
+import { TimerService } from './services/timer.service';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -33,16 +42,45 @@ const appRoutes: Routes =  [
     RegisterComponent,
     HomeComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    TimerComponent,
+    TimerViewComponent,
+    AboutViewComponent,
+    SidebarComponent,
+    HistoryComponent,
+    SettingsComponent,
+    TimerComponent,
+    ActionButtonsComponent,
+    TimerToggleComponent,
+    DashToSpacePipe,
+    CapitalizePipe,
+    CamelizePipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes),
+    AppRoutesModule,
     FlashMessagesModule.forRoot()
   ],
-  providers: [ValidateService, AuthService, AuthGuard],
+  providers: [
+    ValidateService, 
+    AuthService, 
+    AuthGuard,
+    {
+      provide: 'Window',
+      useValue: window
+    },
+    DatePipe,
+    DashToSpacePipe,
+    CapitalizePipe,
+    CamelizePipe,
+    Title,
+    TimerService,
+    HistoryService,
+    SettingsService,
+    StorageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
