@@ -1,0 +1,15 @@
+<div class="card bg-primary mb-3 border-dark">
+  <div class="d-flex justify-content-center card-body">
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-primary active m-2"  (click)="setTimer(settingsService.timerTypes[0])" >
+        <input type="radio" name="options" id="option1" autocomplete="off" checked=""> Pomodoro
+      </label>
+      <label class="btn btn-primary m-2" (click)="setTimer(settingsService.timerTypes[1])">
+        <input type="radio" name="options" id="option2" autocomplete="off"> Short Break
+      </label>
+      <label class="btn btn-primary m-2" (click)="setTimer(settingsService.timerTypes[2])">
+        <input type="radio" name="options" id="option3" autocomplete="off"> Long Break
+      </label>
+    </div>
+  </div>
+</div>
