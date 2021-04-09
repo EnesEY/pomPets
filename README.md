@@ -1,24 +1,5 @@
-# MEANauthapp
+# Pomodoro Timer App
+### MongoDB, Node.js, Angular.js
 
-Complete MEAN stack application with authentication using json web tokens
-
-### Version
-1.0.0
-
-## Usage
-
-
-### Installation
-
-Install the dependencies
-
-```sh
-$ npm install
-```
-Run app
-
-```sh
-$ npm start
-```
-
-### Screenshots in Wiki: https://github.com/tomcatbuzz/meanauthapp/wiki
+Hosted at:
+https://pom-pets.herokuapp.com/
