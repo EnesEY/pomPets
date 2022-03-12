@@ -33,6 +33,8 @@ import { SettingsService } from './services/settings.service';
 import { StorageService } from './services/storage.service';
 import { TimerService } from './services/timer.service';
 import { DatePipe } from '@angular/common';
+import { ChatboxComponent } from './components/chatbox/chatbox.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { DatePipe } from '@angular/common';
     TimerToggleComponent,
     DashToSpacePipe,
     CapitalizePipe,
-    CamelizePipe
+    CamelizePipe,
+    ChatboxComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
